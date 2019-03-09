@@ -22,8 +22,19 @@ public class ImageResizer {
     }
     
 	public static void main(String [] args) {
-		String imgFilePath = "../data/ddd.jpg";                                                            	//Path of the original image
-		String sqFilePath = "../data/squareDDD.jpg";                                                       	//Path of the square image
+        String imgFilePath;
+        String sqFilePath;
+        if (args.length == 0){
+            imgFilePath = "../data/ddd.jpg";
+            //Path of the default image
+            sqFilePath = "../data/squareDDD.jpg";
+            //Path of the square default image
+        }
+        else{
+            // if there is more than 1 file path just do the first one
+            imgFilePath = args[0];
+            sqFilePath = args[0];
+        }
 		int sqSideLen = 512;                                                                               	//Size of the square image
 		ImageResizer ImageResizeInst = new ImageResizer();                                                 	//Instantiate class
         try { ImageResizeInst.sqTransformImg(imgFilePath, sqFilePath, sqSideLen); }                        	//Try to transform original image into square dimensions
