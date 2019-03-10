@@ -24,6 +24,7 @@ public class ImageResizer {
 	public static void main(String [] args) {
         String imgFilePath;
         String sqFilePath;
+        //System.out.println(args[0]);
         if (args.length == 0){
             imgFilePath = "../data/ddd.jpg";
             //Path of the default image
@@ -33,7 +34,7 @@ public class ImageResizer {
         else{
             // if there is more than 1 file path just do the first one
             imgFilePath = args[0];
-            sqFilePath = args[0];
+            sqFilePath = args[1];
         }
 		int sqSideLen = 512;                                                                               	//Size of the square image
 		ImageResizer ImageResizeInst = new ImageResizer();                                                 	//Instantiate class
